@@ -1,10 +1,10 @@
 # Portfolio of Abhishek Doshi
 
-This portfolio is developed by Abhishek Doshi using Flutter!
+This portfolio is developed by Abhishek Doshi using Flutter!💙
 
 ___
 
-This portfolio website is developed by Abhishek Doshi using Flutter Web<br>
+This portfolio website is developed by Abhishek Doshi using Flutter Web💙 with lots and lots of Love 💖<br>
 All rights are reserved by the owner!
 <br><br>
 
