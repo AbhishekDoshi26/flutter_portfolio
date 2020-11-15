@@ -234,7 +234,7 @@ class Home extends StatelessWidget {
                               (index) => Padding(
                                 padding: const EdgeInsets.all(50.0),
                                 child: Image.asset(
-                                  'assets/social_logo/github.png',
+                                  'assets/skills/$index.png',
                                 ),
                               ),
                             ),
