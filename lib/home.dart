@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 import 'package:portfolio/about.dart';
@@ -230,7 +231,7 @@ class Home extends StatelessWidget {
                             crossAxisSpacing: 10.0,
                             shrinkWrap: true,
                             children: List.generate(
-                              15,
+                              9,
                               (index) => Padding(
                                 padding: const EdgeInsets.all(50.0),
                                 child: Image.asset(
@@ -257,6 +258,45 @@ class Home extends StatelessWidget {
                               "https://github-readme-stats.vercel.app/api?username=AbhishekDoshi26&show_icons=true&theme=dark&line_height=27",
                             ),
                           ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 200.0,
+                ),
+                Text(
+                  "Projects💻",
+                  style: GoogleFonts.lobster(
+                    textStyle: TextStyle(
+                        fontSize: screenWidth / 30, color: Colors.blue),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(70.0),
+                  child: Container(
+                    height: 400.0,
+                    width: double.infinity,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20.0),
+                            ),
+                          ),
+                          elevation: 50.0,
+                          shadowColor: Colors.blue,
+                          color: Colors.transparent,
+                          child: Image.asset('assets/images/main.png'),
+                        ),
+                        SizedBox(
+                          width: 10.0,
                         ),
                       ],
                     ),
