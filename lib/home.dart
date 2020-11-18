@@ -284,19 +284,95 @@ class Home extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20.0),
-                            ),
-                          ),
-                          elevation: 50.0,
-                          shadowColor: Colors.blue,
-                          color: Colors.transparent,
-                          child: Image.asset('assets/images/main.png'),
+                        ProjectHome(
+                          pname: 'contactus',
+                          url: 'https://pub.dev/packages/contactus',
+                          desc:
+                              'I have published my own Flutter package named contactus.\ncontactus helps the developer to easily add their contact details which can be\nintegrated to flutter app for android, ios and for web.',
                         ),
                         SizedBox(
                           width: 10.0,
+                        ),
+                        ProjectHome(
+                          pname: 'productly',
+                          url:
+                              'https://play.google.com/store/apps/details?id=abhishekdoshi.netlify.productly',
+                          desc:
+                              'Productly is an app that will help users\nto know the product manufacturing country!!\nUsers can scan the barcode of the product and the\napp will display the country name.',
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        ProjectHome(
+                          pname: 'kposhak',
+                          url:
+                              'https://play.google.com/store/apps/details?id=abhishekdoshi.netlify.kposhak',
+                          desc:
+                              'It is an app for K Poshak NX, Valsad\nUsing this app, users can view the new stock, download images and also contact the owner!!\nIn simple words, it is an online gallery app with an Admin Side too!!\nThe Admin can add new images, add multiple images and delete images\n',
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        ProjectHome(
+                          pname: 'shopping',
+                          url:
+                              'https://github.com/AbhishekDoshi26/Shoppping-UI',
+                          desc:
+                              'It\'s UI Implementation for Shopping App using Flutter\n',
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        ProjectHome(
+                          pname: 'superpedia',
+                          url: 'https://github.com/AbhishekDoshi26/superpedia',
+                          desc:
+                              'Superheroes + Wikipedia = Superpedia!!\nIt gives Power Stats about various superheroes.\nUsers can also download wallpaper of that hero!\n',
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        ProjectHome(
+                          pname: 'whatsapp',
+                          url: 'https://github.com/AbhishekDoshi26/whatsapp_dm',
+                          desc:
+                              'WhatsApp DM is an app that allows users\nto send message to unsaved contact number on WhatsApp!!\n',
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        ProjectHome(
+                          pname: 'Lifeline',
+                          url: 'https://github.com/HAC-2020/Code-Crackers',
+                          desc:
+                              'Lifeline is an app to connect Blood, Plasma,\nPlatelets Donors with those in need.',
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        ProjectHome(
+                          pname: 'wallpaper',
+                          url: 'https://github.com/AbhishekDoshi26/wallpaper',
+                          desc:
+                              'It is a simple app that provides random HD Wallpapers\nUsing this app, users can view the wallpapers, download it and\nset wallpaper on home or lockscreen or both!',
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                icon: Icon(Icons.arrow_right_rounded),
+                                iconSize: 50.0,
+                                color: Colors.white,
+                                onPressed: () => launch(
+                                    'https://github.com/AbhishekDoshi26'),
+                              ),
+                              Text("Check more projects!"),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -307,6 +383,30 @@ class Home extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class ProjectHome extends StatelessWidget {
+  String pname, url, desc;
+  ProjectHome({this.pname, this.url, this.desc});
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => launch(url),
+      child: Tooltip(
+        message: desc + '\n\nClick on the image to know more!!',
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20.0),
+            ),
+          ),
+          //elevation: 50.0,
+          color: Colors.transparent,
+          child: Image.asset('assets/projects/$pname.png'),
+        ),
+      ),
     );
   }
 }
