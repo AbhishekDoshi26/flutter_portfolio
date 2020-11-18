@@ -141,12 +141,24 @@ class Home extends StatelessWidget {
                                         width: 30.0,
                                       ),
                                       IconButton(
-                                          icon: Image.asset(
-                                            'assets/social_logo/github.png',
-                                          ),
-                                          iconSize: 40,
-                                          onPressed: () => launch(
-                                              "https://github.com/AbhishekDoshi26")),
+                                        icon: Image.asset(
+                                          'assets/social_logo/github.png',
+                                        ),
+                                        iconSize: 40,
+                                        onPressed: () => launch(
+                                            "https://github.com/AbhishekDoshi26"),
+                                      ),
+                                      SizedBox(
+                                        width: 30.0,
+                                      ),
+                                      IconButton(
+                                        icon: Image.asset(
+                                          'assets/social_logo/gmail.png',
+                                        ),
+                                        iconSize: 40,
+                                        onPressed: () => launch(
+                                            "mailto:adoshi26.ad@gmail.com"),
+                                      ),
                                     ],
                                   ),
                                 ),
