@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:contactus/contactus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -388,6 +389,15 @@ class Home extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                ),
+                Container(
+                  width: screenWidth,
+                  child: ContactUsBottomAppBar(
+                    textColor: Colors.white60,
+                    backgroundColor: Colors.transparent,
+                    email: 'adoshi26.ad@gmail.com',
+                    companyName: 'Abhishek Doshi',
                   ),
                 ),
               ],
