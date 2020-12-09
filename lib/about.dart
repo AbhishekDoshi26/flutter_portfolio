@@ -3,6 +3,8 @@ import 'package:flutter_tindercard/flutter_tindercard.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class About extends StatelessWidget {
+  About({this.isSmallScreen});
+  bool isSmallScreen;
   List<String> welcomeImages = [
     "assets/images/flutter.png",
     "assets/images/community.png",
@@ -29,7 +31,7 @@ class About extends StatelessWidget {
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.width * 1.2,
+              height: MediaQuery.of(context).size.height - 100,
               child: Card(
                 elevation: 20.0,
                 shadowColor: Colors.blue,
@@ -38,25 +40,63 @@ class About extends StatelessWidget {
                     Radius.circular(20.0),
                   ),
                 ),
-                child: Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20.0),
+                child: isSmallScreen
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20.0),
+                            ),
+                            child: Image.asset(
+                              '${welcomeImages[2]}',
+                            ),
+                          ),
+                          SizedBox(
+                            width: 50.0,
+                          ),
+                          Text(
+                            '${title[2]}',
+                            style: GoogleFonts.lobster(
+                              textStyle:
+                                  TextStyle(fontSize: 30, color: Colors.blue),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              '${data[2]}',
+                              softWrap: true,
+                              style: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width / 30),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Row(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20.0),
+                            ),
+                            child: Image.asset('${welcomeImages[2]}'),
+                          ),
+                          SizedBox(
+                            width: 20.0,
+                          ),
+                          Text(
+                            '${data[2]}',
+                            softWrap: true,
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width / 90),
+                          ),
+                        ],
                       ),
-                      child: Image.asset('${welcomeImages[2]}'),
-                    ),
-                    SizedBox(
-                      width: 20.0,
-                    ),
-                    Text(
-                      '${data[2]}',
-                      softWrap: true,
-                      style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 90),
-                    ),
-                  ],
-                ),
               ),
             ),
           ),
@@ -68,9 +108,9 @@ class About extends StatelessWidget {
             stackNum: 3,
             swipeEdge: 4.0,
             maxWidth: MediaQuery.of(context).size.width * 0.9,
-            maxHeight: MediaQuery.of(context).size.width * 1.2,
+            maxHeight: MediaQuery.of(context).size.height * 1.2,
             minWidth: MediaQuery.of(context).size.width * 0.89,
-            minHeight: MediaQuery.of(context).size.width * 1.19,
+            minHeight: MediaQuery.of(context).size.height * 1.19,
             cardBuilder: (context, index) => Card(
               elevation: 20.0,
               shadowColor: Colors.white60,
@@ -79,46 +119,85 @@ class About extends StatelessWidget {
                   Radius.circular(20.0),
                 ),
               ),
-              child: Row(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20.0),
-                    ),
-                    child: Image.asset(
-                      '${welcomeImages[index]}',
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20.0,
-                  ),
-                  Center(
-                    child: Column(
+              child: isSmallScreen
+                  ? Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          '${title[index]}',
-                          style: GoogleFonts.lobster(
-                            textStyle: TextStyle(
-                                fontSize:
-                                    MediaQuery.of(context).size.width / 40,
-                                color: Colors.blue),
+                        ClipRRect(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20.0),
+                          ),
+                          child: Image.asset(
+                            '${welcomeImages[index]}',
                           ),
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height / 5,
+                          width: 50.0,
                         ),
                         Text(
-                          '${data[index]}',
-                          softWrap: true,
-                          style: TextStyle(
-                              fontSize: MediaQuery.of(context).size.width / 90),
+                          '${title[index]}',
+                          style: GoogleFonts.lobster(
+                            textStyle:
+                                TextStyle(fontSize: 30, color: Colors.blue),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            '${data[index]}',
+                            softWrap: true,
+                            style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width / 30),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20.0),
+                          ),
+                          child: Image.asset(
+                            '${welcomeImages[index]}',
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${title[index]}',
+                                style: GoogleFonts.lobster(
+                                  textStyle: TextStyle(
+                                      fontSize:
+                                          MediaQuery.of(context).size.width /
+                                              40,
+                                      color: Colors.blue),
+                                ),
+                              ),
+                              SizedBox(
+                                height: MediaQuery.of(context).size.height / 5,
+                              ),
+                              Text(
+                                '${data[index]}',
+                                softWrap: true,
+                                style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.width / 90),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                ],
-              ),
             ),
             cardController: controller = CardController(),
             swipeUpdateCallback: (DragUpdateDetails details, Alignment align) {
