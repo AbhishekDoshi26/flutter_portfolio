@@ -83,17 +83,41 @@ class About extends StatelessWidget {
                             borderRadius: BorderRadius.all(
                               Radius.circular(20.0),
                             ),
-                            child: Image.asset('${welcomeImages[2]}'),
+                            child: Image.asset(
+                              '${welcomeImages[2]}',
+                            ),
                           ),
                           SizedBox(
                             width: 20.0,
                           ),
-                          Text(
-                            '${data[2]}',
-                            softWrap: true,
-                            style: TextStyle(
-                                fontSize:
-                                    MediaQuery.of(context).size.width / 90),
+                          Center(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '${title[2]}',
+                                  style: GoogleFonts.lobster(
+                                    textStyle: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                40,
+                                        color: Colors.blue),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height / 5,
+                                ),
+                                Text(
+                                  '${data[2]}',
+                                  softWrap: true,
+                                  style: TextStyle(
+                                      fontSize:
+                                          MediaQuery.of(context).size.width /
+                                              90),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
